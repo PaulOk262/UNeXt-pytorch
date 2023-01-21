@@ -251,7 +251,7 @@ def main():
     img_ids = glob(os.path.join('/content','inputs', 'images', '*'))
     print("--------Debuggger--------")
     print(str(os.path.join('/content','inputs', 'images', '*')))
-    print(img_ids[:2)
+    print(img_ids[:2])
     print("--------Debuggger--------")
     img_ids = [os.path.basename(p) for p in img_ids]
     img_ids = glob(os.path.join('inputs', config['dataset'], 'images', '*'))
