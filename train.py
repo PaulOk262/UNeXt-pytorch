@@ -248,6 +248,12 @@ def main():
         raise NotImplementedError
 
     # Data loading code
+    img_ids = glob(os.path.join('/content','inputs', 'images', '*'))
+    print("--------Debuggger--------")
+    print(str(os.path.join('/content','inputs', 'images', '*')))
+    print(img_ids[:2)
+    print("--------Debuggger--------")
+    img_ids = [os.path.basename(p) for p in img_ids]
     img_ids = glob(os.path.join('inputs', config['dataset'], 'images', '*'))
     img_ids = [os.path.basename(p) for p in img_ids]
 
@@ -267,16 +273,16 @@ def main():
 
     train_dataset = Dataset(
         img_ids=train_img_ids,
-        img_dir=os.path.join('inputs', config['dataset'], 'images'),
-        mask_dir=os.path.join('inputs', config['dataset'], 'masks'),
+        img_dir=os.path.join('/content','inputs', 'images'),
+        mask_dir=os.path.join('/content','inputs', 'masks'),
         img_ext=config['img_ext'],
         mask_ext=config['mask_ext'],
         num_classes=config['num_classes'],
         transform=train_transform)
     val_dataset = Dataset(
         img_ids=val_img_ids,
-        img_dir=os.path.join('inputs', config['dataset'], 'images'),
-        mask_dir=os.path.join('inputs', config['dataset'], 'masks'),
+        img_dir=os.path.join('/content','inputs', 'images',),
+        mask_dir=os.path.join('/content','inputs', 'masks'),
         img_ext=config['img_ext'],
         mask_ext=config['mask_ext'],
         num_classes=config['num_classes'],
